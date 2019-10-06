@@ -139,6 +139,8 @@ $acceptedPID = end($acceptedPID);
   ]
 */
 
+
+
 $postfield = '{"fields": {
     "user_id"   : {"stringValue": "'.$user_id.'" },
     "partner_id": {"stringValue": "'.$acceptedPID['pid'].'" },
@@ -153,7 +155,6 @@ $postfield = '{"fields": {
     }
 }}';
 
-// echo $postfield;die();
 
 // add to pesanan
 curl_setopt_array($curl, array(
