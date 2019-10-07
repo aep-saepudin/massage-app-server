@@ -13,20 +13,30 @@
         die();
     } 
 
-    $query = "SELECT * FROM product";
+    $pid = $_GET['pid'];
+
+    $query = "SELECT pricing.product_id , child_item.name , pricing.price, items.item_name
+    FROM pricing 
+    LEFT JOIN child_item ON child_item.id = pricing.child_item_id LEFT JOIN items ON items.id = child_item.item_id
+    WHERE pricing.product_id = $pid";
+    
     $result = $conn->query($query);
 
     $data = array();
+    $data2 = array();
     if($result->num_rows > 0){
 
         while($row = $result->fetch_assoc()) {
 
-            $data[] = $row;
+            $data[$row['item_name']][] = array(
+                "name" => $row['name'],
+                "price" =>$row['price']
+            );
         }
         
         $return = array(
             "status" => true,
-            "data"   => $data
+            "data"   => $data,
         );
 
     } else {
