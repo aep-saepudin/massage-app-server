@@ -1,0 +1,1 @@
+[08-Oct-2019 01:19:59 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/blindmas/public_html/apis/massage-app-server/apis/getAllProduct.php on line 6
