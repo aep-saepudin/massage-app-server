@@ -1,12 +1,14 @@
 <?php
 include 'library/distance.php';
 include 'library/arrayOperation.php';
+include 'config.php';
 
 header('Content-Type: application/json');
 
-$BASE_URL = 'https://firestore.googleapis.com/';
-$DATABASE_URL = '/v1/projects/massage-blind/databases/%28default%29/';
-$key = 'AIzaSyBglHISyB36SibOQ2MWH_3SEN-MKwc4_1k';
+
+// $BASE_URL = 'https://firestore.googleapis.com/';
+// $DATABASE_URL = '/v1/projects/massage-blind/databases/%28default%29/';
+// $key = 'AIzaSyBglHISyB36SibOQ2MWH_3SEN-MKwc4_1k';
 
 $user_id    = $_GET['user_id'];                                         // u1
 $latitude   = $_GET['latitude'];                                        // 1.2
@@ -17,6 +19,15 @@ $id_pesanan = isset($_GET['id_pesanan']) ? $_GET['id_pesanan'] : null;  // dsad7
 
 
 $debug = array();
+
+$debug['params'] = array(
+  $user_id,
+  $latitude,
+  $longitude,
+  $payment,
+  $skipped,
+  $id_pesanan,
+);
 $curl = curl_init();
 
 // get active partner
@@ -26,10 +37,20 @@ curl_setopt($curl, CURLOPT_URL, $BASE_URL . $DATABASE_URL . "documents/activePar
 $response = curl_exec($curl);
 $decoded = json_decode($response);
 
+
 $debug['getActivePartner'] = array(
   "result" => json_decode($response),
   "error"  => curl_error($curl)
 );
+
+if ( !count((array)$decoded)) {
+  $debug['error'] = "Tidak ada terapis yang aktif";
+
+  curl_close($curl);
+  echo json_encode($debug);    
+  die();
+  
+}
 
 
 // filterActive
@@ -140,7 +161,6 @@ $acceptedPID = end($acceptedPID);
 */
 
 
-
 $postfield = '{"fields": {
     "user_id"   : {"stringValue": "'.$user_id.'" },
     "partner_id": {"stringValue": "'.$acceptedPID['pid'].'" },
@@ -154,6 +174,8 @@ $postfield = '{"fields": {
         }
     }
 }}';
+
+$debug['postfield'] = $postfield;
 
 
 // add to pesanan
@@ -195,4 +217,4 @@ if (isset($id_pesanan)) {
 }
 
 curl_close($curl);
-echo json_encode($debug['addPesanan']);
+echo json_encode($debug);
