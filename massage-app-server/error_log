@@ -7,3 +7,95 @@
 [25-Sep-2019 21:24:42 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'blindmas_app'@'localhost' to database 'blindmas_blind_app' in /home/blindmas/public_html/apis/massage-app-server/login.php on line 11
 [25-Sep-2019 21:25:37 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'blindmas_app'@'localhost' to database 'blindmas_blind_app' in /home/blindmas/public_html/apis/massage-app-server/login.php on line 11
 [25-Sep-2019 21:26:23 Asia/Jakarta] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'blindmas_app'@'localhost' to database 'blindmas_blind_app' in /home/blindmas/public_html/apis/massage-app-server/login.php on line 11
+[08-Oct-2019 22:43:15 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 43
+[08-Oct-2019 22:43:15 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[08-Oct-2019 22:43:15 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[08-Oct-2019 22:43:15 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[08-Oct-2019 22:43:15 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[08-Oct-2019 22:43:15 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[08-Oct-2019 22:43:33 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 43
+[08-Oct-2019 22:43:33 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[08-Oct-2019 22:43:33 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[08-Oct-2019 22:43:33 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[08-Oct-2019 22:43:33 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[08-Oct-2019 22:43:33 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:01:46 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[09-Oct-2019 22:01:46 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[09-Oct-2019 22:01:46 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[09-Oct-2019 22:01:46 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[09-Oct-2019 22:01:46 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:02:05 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[09-Oct-2019 22:02:05 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[09-Oct-2019 22:02:05 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[09-Oct-2019 22:02:05 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[09-Oct-2019 22:02:05 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:06:28 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[09-Oct-2019 22:06:28 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[09-Oct-2019 22:06:28 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[09-Oct-2019 22:06:28 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[09-Oct-2019 22:06:28 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:06:29 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[09-Oct-2019 22:06:29 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[09-Oct-2019 22:06:29 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[09-Oct-2019 22:06:29 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[09-Oct-2019 22:06:29 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:09:11 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[09-Oct-2019 22:09:11 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[09-Oct-2019 22:09:11 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[09-Oct-2019 22:09:11 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[09-Oct-2019 22:09:11 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:12:44 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[09-Oct-2019 22:12:45 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[09-Oct-2019 22:12:45 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[09-Oct-2019 22:12:45 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[09-Oct-2019 22:12:45 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:12:54 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[09-Oct-2019 22:12:54 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[09-Oct-2019 22:12:54 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[09-Oct-2019 22:12:54 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[09-Oct-2019 22:12:54 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:16:38 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 93
+[09-Oct-2019 22:16:38 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 111
+[09-Oct-2019 22:16:38 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 124
+[09-Oct-2019 22:16:38 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 131
+[09-Oct-2019 22:16:38 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:21:41 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 95
+[09-Oct-2019 22:21:41 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 113
+[09-Oct-2019 22:21:41 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 126
+[09-Oct-2019 22:21:41 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 133
+[09-Oct-2019 22:21:41 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 135
+[09-Oct-2019 22:25:26 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 104
+[09-Oct-2019 22:25:26 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 122
+[09-Oct-2019 22:25:26 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 135
+[09-Oct-2019 22:25:26 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 142
+[09-Oct-2019 22:25:26 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 144
+[09-Oct-2019 22:28:48 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 104
+[09-Oct-2019 22:28:48 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 122
+[09-Oct-2019 22:28:48 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 135
+[09-Oct-2019 22:28:48 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 142
+[09-Oct-2019 22:28:48 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 144
+[09-Oct-2019 22:33:18 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 104
+[09-Oct-2019 22:33:18 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 122
+[09-Oct-2019 22:33:18 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 135
+[09-Oct-2019 22:33:18 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 142
+[09-Oct-2019 22:33:18 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 144
+[09-Oct-2019 22:34:13 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 104
+[09-Oct-2019 22:34:13 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 122
+[09-Oct-2019 22:34:13 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 135
+[09-Oct-2019 22:34:13 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 142
+[09-Oct-2019 22:34:13 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 144
+[09-Oct-2019 22:38:47 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 114
+[09-Oct-2019 22:38:47 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 132
+[09-Oct-2019 22:38:47 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 145
+[09-Oct-2019 22:38:47 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 152
+[09-Oct-2019 22:38:47 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 154
+[09-Oct-2019 22:40:08 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 114
+[09-Oct-2019 22:40:08 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 132
+[09-Oct-2019 22:40:08 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 145
+[09-Oct-2019 22:40:08 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 152
+[09-Oct-2019 22:40:08 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 154
+[09-Oct-2019 22:48:29 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 114
+[09-Oct-2019 22:48:29 Asia/Jakarta] PHP Warning:  array_map(): Argument #2 should be an array in /home/blindmas/public_html/apis/massage-app-server/order.php on line 132
+[09-Oct-2019 22:48:29 Asia/Jakarta] PHP Warning:  array_reduce() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 145
+[09-Oct-2019 22:48:29 Asia/Jakarta] PHP Warning:  array_filter() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 152
+[09-Oct-2019 22:48:29 Asia/Jakarta] PHP Warning:  end() expects parameter 1 to be array, null given in /home/blindmas/public_html/apis/massage-app-server/order.php on line 154
