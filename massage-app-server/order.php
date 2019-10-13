@@ -134,11 +134,23 @@ $arrayDistance = array_map('calculateDistance', $arrayPoints);
 /*
   $arrayDistance = [
     [
-      maters: 1000,
+      meters: 1000,
       pid   : p2
     ]
   ]
 */
+
+// limit pencarian berdasarkan jarak 5Km
+if ($arrayDistance['meters'] > 5000) {
+  
+  echo json_encode(array(
+    "code"    => 400,
+    "data"    => $arrayDistance,
+    "message" => "Lebih dari 5km"
+  ));
+  die();
+}
+
 
 $min = array_reduce($arrayDistance, function($min, $details) {
   return min($min, $details['meters']);
