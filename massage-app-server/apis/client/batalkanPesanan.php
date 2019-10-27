@@ -2,15 +2,22 @@
 
     header('Content-Type: application/json');
     $id_pesanan = $_GET['id_pesanan'];
+    $isBefoforeFoundTerapis = $_GET['isOnSearch'];
 
     // delete firestore active pesanan
     if (isset($id_pesanan)) {
         include '../config.php';
 
+        if ( isset($isBefoforeFoundTerapis) && $isBefoforeFoundTerapis ){
+          $pesananPath = 'pesanan';
+        } else {
+          $pesananPath = 'pesananClient';
+        }
+
         // cek pesanan ada atau tidak
         $curl_delete = curl_init();
         curl_setopt_array($curl_delete, array(
-            CURLOPT_URL            => $BASE_URL . $DATABASE_URL. "documents/pesananClient/$id_pesanan?key=$key",
+            CURLOPT_URL            => $BASE_URL . $DATABASE_URL. "documents/$pesananPath/$id_pesanan?key=$key",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CUSTOMREQUEST  => "GET",
           ));
@@ -20,6 +27,11 @@
         if (isset($response->error)) {
             $result['code'] = 400;
             $result['data'] = json_decode(curl_exec($curl_delete));
+            $result['param'] = array(
+              'isbefore' => json_encode($isBefoforeFoundTerapis),
+              'id_pesanan' => $id_pesanan,
+              'debug' => isset($isBefoforeFoundTerapis) && $isBefoforeFoundTerapis,
+            );
             $result['message'] = "lihat detail";
 
             echo json_encode($result);
@@ -29,7 +41,7 @@
           
           $detailPesanan = json_decode(curl_exec($curl_delete));
           curl_setopt_array($curl_delete, array(
-            CURLOPT_URL            => $BASE_URL . $DATABASE_URL. "documents/pesananClient/$id_pesanan?key=$key",
+            CURLOPT_URL            => $BASE_URL . $DATABASE_URL. "documents/$pesananPath/$id_pesanan?key=$key",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_CUSTOMREQUEST  => "DELETE",
           ));
@@ -38,6 +50,7 @@
 
 
           $result['code']    = 200;
+          $result['data']    = $id_pesanan;
           $result['message'] = "Sukses Delete Data";
         }
 
