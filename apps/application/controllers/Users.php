@@ -8,6 +8,7 @@ class Users extends CI_Controller {
 		$this->load->model('user_model');
 		$this->load->library('params');
 
+		header('Content-Type: application/json');
 	}
 
   public function detail($id)
@@ -21,7 +22,7 @@ class Users extends CI_Controller {
 		
 		$extract =  $this->params->extractUserParam($id);
 		$data = $this->user_model->getDetail($extract['id']);
-		print_r($data);
+		echo json_encode($data);
 		return $data;
 	}
 	
