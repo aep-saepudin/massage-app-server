@@ -51,16 +51,15 @@
 
           if($conn->query($register) === TRUE){
     
-            $return = array(
+            $result = array(
                 "code"    => 200,
                 "message" => 'Sukses insert'
             );
         
           } else {
-          
-              $return = array(
+              $result = array(
                   "code"    => 400,
-                  "message" => 'Gagal insert',
+                  "message" => $conn->error,
               );
           
           }
@@ -68,8 +67,6 @@
           $conn->close();
 
         }
-
-        
 
       } else  {
 
