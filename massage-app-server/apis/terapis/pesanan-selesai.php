@@ -3,6 +3,9 @@
 
     header('Content-Type: application/json');
     $id_pesanan = $_GET['id_pesanan'];
+    $client_id = $_GET['client_id']; // u1
+    $partner_id = $_GET['partner_id']; // p1
+    $pricing_ids = $_GET['pricing_ids']; // 
 
     // delete firestore active pesanan
     if (isset($id_pesanan)) {
@@ -47,7 +50,14 @@
 
 
           include '../db/connectDB.php';
-          $register = "insert into transaction (client_id , partner_id , product_id ,	date_created ,	pricing_ids, total_price ) values ('$client_id','$partner_id','$product_id',NOW(),'$pricing_ids','$total',)";
+          $register = "insert into transaction (
+            client_id, 
+            partner_id, 
+            product_id,	
+            date_created,	
+            pricing_ids, 
+            total_price 
+          ) values ('$client_id','$partner_id','$product_id',NOW(),'$pricing_ids','$total')";
 
           if($conn->query($register) === TRUE){
     

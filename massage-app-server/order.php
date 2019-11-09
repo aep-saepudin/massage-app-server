@@ -1,4 +1,79 @@
 <?php
+
+
+
+function insertFirebasePesanan ($data, $partner_id, $distance){
+  if($data){
+    $user_id    = $data['user_id'];                                         // u1
+    $latitude   = $data['latitude'];                                        // 1.2
+    $longitude  = $data['longitude'];                                       // 1.3
+    $payment    = $data['payment'];
+  } 
+  
+  $products_string = '';
+  if ($data){
+    $reduce = '';
+    $array_expression = $data['products']['options'];
+    $i = 0;
+    foreach ($array_expression as $key => $value) {
+      $last = $i == 0 ? ',' : '';
+      $reduce .= '"'. strtolower(str_replace(" ","_",$key)).'" : {"integerValue": '. $value .' }'. $last;
+      $i++;
+    }
+  
+    $products_string = '"products"   : { 
+      "mapValue": {
+        "fields": {
+          '.$reduce.'
+        }
+      } 
+    },';
+  }
+  
+  $postfield = '{"fields": {
+    "user_id"   : {"stringValue": "'.$user_id.'" },
+    "partner_id": {"stringValue": "'.$partner_id.'" },
+    "distance"  : {"doubleValue": '.$distance.' },
+    "payment"   : {"stringValue": "'. $payment .'" },
+    "user_location"  : {
+      "geoPointValue":
+        {
+          "latitude" : '.$latitude.',
+          "longitude": '.$longitude.'
+        }
+    },
+    '.$products_string.'
+    "name" : {"stringValue": "'. $data['products']['name'] .'" }
+  }}';
+  
+  $curl = curl_init();
+  
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://firestore.googleapis.com/v1/projects/massage-blind/databases/%28default%29/documents/pesanan/?key=AIzaSyBglHISyB36SibOQ2MWH_3SEN-MKwc4_1k",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => "",
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "POST",
+    CURLOPT_POSTFIELDS => $postfield,
+    CURLOPT_HTTPHEADER => array(
+      "Content-Type: application/json",
+    ),
+  ));
+  
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+  
+    curl_close($curl);
+  
+    if ($err) {
+      return $err;
+    } else {
+      return $response;
+    }
+}
+
 include 'library/distance.php';
 include 'library/arrayOperation.php';
 include 'config.php';
@@ -10,13 +85,25 @@ header('Content-Type: application/json');
 // $DATABASE_URL = '/v1/projects/massage-blind/databases/%28default%29/';
 // $key = 'AIzaSyBglHISyB36SibOQ2MWH_3SEN-MKwc4_1k';
 
-$user_id    = $_GET['user_id'];                                         // u1
-$latitude   = $_GET['latitude'];                                        // 1.2
-$longitude  = $_GET['longitude'];                                       // 1.3
-$payment    = $_GET['payment'];
+
+//{"latitude":-6.88034609999999968721340337651781737804412841796875,"longitude":107.590040799999997034319676458835601806640625,"payment":"tunai","user_id":"u1","products":{"options":{"Durasi":"2000","Jenis Kelamin":"1000"},"name":"Full Body Massage"}}}
+$data = json_decode( file_get_contents( 'php://input' ), true );
+
+
+
+$user_id    = $_GET['user_id'] or '';                                         // u1
+$latitude   = $_GET['latitude'] or '';                                        // 1.2
+$longitude  = $_GET['longitude'] or '';                                       // 1.3
+$payment    = $_GET['payment'] or '';
 $skipped    = isset($_GET['skipped']) ? $_GET['skipped'] : null;        // p1,p2
 $id_pesanan = isset($_GET['id_pesanan']) ? $_GET['id_pesanan'] : null;  // dsad7s87da
 
+if($data){
+  $user_id    = $data['user_id'];                                         // u1
+  $latitude   = $data['latitude'];                                        // 1.2
+  $longitude  = $data['longitude'];                                       // 1.3
+  $payment    = $data['payment'];
+} 
 
 $debug = array();
 
@@ -172,44 +259,7 @@ $acceptedPID = end($acceptedPID);
   ]
 */
 
-
-$postfield = '{"fields": {
-    "user_id"   : {"stringValue": "'.$user_id.'" },
-    "partner_id": {"stringValue": "'.$acceptedPID['pid'].'" },
-    "distance"  : {"doubleValue": '. $acceptedPID['meters'] .' },
-    "payment"   : {"stringValue": "'. $payment .'" },
-    "user_location"  : {
-      "geoPointValue":
-        {
-          "latitude" : '.$latitude.',
-          "longitude": '.$longitude.'
-        }
-    }
-}}';
-
-$debug['postfield'] = $postfield;
-
-
-// add to pesanan
-curl_setopt_array($curl, array(
-  CURLOPT_URL            => $BASE_URL . $DATABASE_URL. "documents/pesanan?key=$key",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING       => "",
-  CURLOPT_MAXREDIRS      => 10,
-  CURLOPT_TIMEOUT        => 30,
-  CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST  => "POST",
-  CURLOPT_HTTPHEADER => array(
-    "Content-Type: application/json",
-  ),
-  CURLOPT_POSTFIELDS     => $postfield,
-));
-
-$debug['addPesanan'] = array(
-  "result" => json_decode(curl_exec($curl)),
-  "error" => curl_error($curl)
-);
-
+$debug['add_data_wow'] = insertFirebasePesanan($data, $acceptedPID['pid'], $acceptedPID['meters']  );
 
 // Delete pesanan lama
 if (isset($id_pesanan)) {
@@ -227,6 +277,8 @@ if (isset($id_pesanan)) {
   );
   curl_close($curl_delete);
 }
+
+$debug['product'] = $data['products'];
 
 curl_close($curl);
 echo json_encode($debug);
