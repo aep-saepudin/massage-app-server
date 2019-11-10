@@ -5,7 +5,16 @@
     $id_pesanan = $_GET['id_pesanan'];
     $client_id = $_GET['client_id']; // u1
     $partner_id = $_GET['partner_id']; // p1
-    $pricing_ids = $_GET['pricing_ids']; // 
+
+
+    $data = json_decode( file_get_contents( 'php://input' ), true );
+
+    if ($data) {
+      $id_pesanan = $data['id_pesanan'];
+      $client_id = $data['client_id']; // u1
+      $partner_id = $data['partner_id']; // p1
+      $products = json_encode($data['products']); // p1
+    }
 
     // delete firestore active pesanan
     if (isset($id_pesanan)) {
@@ -42,11 +51,8 @@
           
           // Insert ke db
 
-          $client_id   = '';
-          $partner_id   = '';
-          $total       = '';
-          $product_id  = '';
-          $pricing_ids = '';
+          $total       = '2000';
+          $products = json_encode($data['products']); // p1
 
 
           include '../db/connectDB.php';
@@ -57,7 +63,7 @@
             date_created,	
             pricing_ids, 
             total_price 
-          ) values ('$client_id','$partner_id','$product_id',NOW(),'$pricing_ids','$total')";
+          ) values ('$client_id','$partner_id','$product_id',NOW(),'$products','$total')";
 
           if($conn->query($register) === TRUE){
     
