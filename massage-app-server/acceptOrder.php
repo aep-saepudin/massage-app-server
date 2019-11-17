@@ -12,8 +12,7 @@ $user_id    = $_GET['user_id'];     // u1
 $partner_id = $_GET['partner_id'];  // p4
 $payment    = $_GET['payment'];     // bank , cod
 $id_pesanan = $_GET['id_pesanan'];
-$posisi = $_GET['location'];
-
+$posisi     = $_GET['location'];
 
 if ($payment == 'bank'){
     $status     = 'waiting_transfer';      // waiting_transfer , on_the_way , doing, finish
@@ -29,7 +28,7 @@ $postfield = '{"fields": {
     "partner_id": {"stringValue": "'.$partner_id.'" },
     "status"    : {"stringValue": "'. $status .'" },
     "payment"   : {"stringValue": "'. $payment .'" },
-    "posisi"   : {"stringValue": "'. $posisi .'" },
+    "posisi"    : {"stringValue": "'. $posisi .'" },
 }}';
 
 

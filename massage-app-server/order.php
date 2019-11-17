@@ -1,5 +1,35 @@
 <?php
 
+/* 
+  TODO: 
+    - show price distance [ ]
+*/
+
+$MAX_DISTANCE = 5000; 
+$debug = array();
+
+function getPrice($distance = 3000){
+  include 'apis/db/connectDB.php';
+  $query = "SELECT * FROM pricing LEFT JOIN child_item ON child_item.id = pricing.child_item_id WHERE child_item.item_id = 3";
+  $result = $conn->query($query);
+
+  if ($result->num_rows > 0) {
+    $price = array();
+    while($row = $result->fetch_assoc()) {
+      $price[] = $row;
+    }
+  } else {
+    echo "0 results";
+  }
+  $conn->close();
+
+  $current_price = array_filter($price, function ($value)  use ($distance){
+    $value_arr =  explode('-', $value['paramStr']);
+    return $distance >= $value_arr[0]  && $distance <= $value_arr[1];
+  });
+  
+  return (int) array_values($current_price)[0]['price'];
+}  
 
 
 function insertFirebasePesanan ($data, $partner_id, $distance){
@@ -105,7 +135,7 @@ if($data){
   $payment    = $data['payment'];
 } 
 
-$debug = array();
+
 
 $debug['params'] = array(
   $user_id,
@@ -228,7 +258,7 @@ $arrayDistance = array_map('calculateDistance', $arrayPoints);
 */
 
 // limit pencarian berdasarkan jarak 5Km
-if ($arrayDistance['meters'] > 5000) {
+if ($arrayDistance['meters'] > $MAX_DISTANCE) {
   
   echo json_encode(array(
     "code"    => 400,
@@ -245,6 +275,8 @@ $min = array_reduce($arrayDistance, function($min, $details) {
 
 /* 1000 */
 
+$debug['distance_price'] = getPrice($min);
+
 $acceptedPID = array_filter( $arrayDistance, function($val){
   global $min;
   return $val["meters"] == $min;
@@ -259,7 +291,7 @@ $acceptedPID = end($acceptedPID);
   ]
 */
 
-$debug['add_data_wow'] = insertFirebasePesanan($data, $acceptedPID['pid'], $acceptedPID['meters']  );
+$debug['add_data_firebase'] = insertFirebasePesanan($data, $acceptedPID['pid'], $acceptedPID['meters']  );
 
 // Delete pesanan lama
 if (isset($id_pesanan)) {
@@ -279,6 +311,9 @@ if (isset($id_pesanan)) {
 }
 
 $debug['product'] = $data['products'];
+$debug['lainya'] = array(
+  "jarak" => $min, 
+);
 
 curl_close($curl);
-echo json_encode($debug);
+echo json_encode($debug);echo json_encode($debug);
